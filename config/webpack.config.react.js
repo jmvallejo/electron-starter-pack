@@ -1,8 +1,9 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
-  target: 'electron-renderer',
-  name: 'react',
+	target: 'electron-renderer',
+	name: 'react',
 	entry: {
 		reactApp: './src/react/index.tsx'
 	},
@@ -20,7 +21,7 @@ const config = {
 	resolve: {
 		extensions: [ '.ts', '.tsx', '.js' ]
 	},
-	plugins: [],
+	plugins: [ new HtmlWebpackPlugin({ template: './src/react/index.html' }) ],
 	node: {
 		fs: 'empty'
 	},
