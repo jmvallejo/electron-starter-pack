@@ -1,13 +1,14 @@
 const path = require('path')
 
 const config = {
+  target: 'electron-renderer',
+  name: 'react',
 	entry: {
-		reactApp: './src/react/index.tsx',
-		electronApp: './src/electron/index.ts'
+		reactApp: './src/react/index.tsx'
 	},
 	output: {
 		filename: '[name].js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, '..', 'dist', 'react')
 	},
 	module: {
 		rules: [

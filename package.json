@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
-    "start": "electron dist/electronApp.js"
+    "build": "webpack --config config/webpack.config.js",
+    "watch": "webpack --watch --config config/webpack.config.js",
+    "start": "electron dist/electron/electronApp.js"
   },
   "devDependencies": {
     "css-loader": "^4.2.2",
