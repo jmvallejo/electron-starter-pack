@@ -1,10 +1,11 @@
 {
   "name": "electron-boilerplate",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/electron/electronApp.js",
   "license": "MIT",
   "scripts": {
     "build": "webpack --env.mode=production --config config/webpack.config.js",
+    "dist": "electron-builder --config config/electron-builder.yml",
     "electron:server": "webpack-dev-server --env.mode=development --config config/webpack.config.react.js",
     "electron:client": "webpack --env.mode=development --config config/webpack.config.electron.js && electron dist/electron/electronApp.js",
     "web:server": "webpack-dev-server --env.mode=development --config config/webpack.config.react.js --open"
@@ -15,6 +16,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.2.2",
     "electron": "^9.2.1",
+    "electron-builder": "^22.8.0",
     "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.2.0",
     "style-loader": "^1.2.1",

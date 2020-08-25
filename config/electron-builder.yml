@@ -1,0 +1,13 @@
+appId: com.mycompany.myapp
+productName: MyApp
+files:
+  - dist/**/*
+directories:
+  output: dist/bin
+win:
+  target: nsis
+mac:
+  category: public.app-category.business
+  publish: null
+linux:
+  target: tar.gz
