@@ -40,7 +40,7 @@ const config = (env, argv) => ({
 			chunks: 'all'
 		}
 	},
-	mode: env.mode || 'development'
+	mode: env.NODE_ENV || 'development'
 })
 
 module.exports = config
