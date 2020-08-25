@@ -1,4 +1,5 @@
 const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const config = {
   target: 'electron-main',
@@ -16,7 +17,10 @@ const config = {
 	resolve: {
 		extensions: [ '.ts', '.js' ]
 	},
-	plugins: [],
+	devtool: 'inline-source-map',
+	plugins: [
+		new CleanWebpackPlugin()
+	],
   mode: process.env.NODE_ENV || 'development'
 }
 

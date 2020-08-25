@@ -1,15 +1,20 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const config = {
-	target: 'electron-renderer',
+	target: 'web',
 	name: 'react',
 	entry: {
 		reactApp: './src/react/index.tsx'
 	},
+	devServer: {
+		hot: true
+	},
 	output: {
 		filename: '[name].js',
-		path: path.resolve(__dirname, '..', 'dist', 'react')
+		path: path.resolve(__dirname, '..', 'dist', 'react'),
+		publicPath: '/'
 	},
 	module: {
 		rules: [
@@ -21,7 +26,11 @@ const config = {
 	resolve: {
 		extensions: [ '.ts', '.tsx', '.js' ]
 	},
-	plugins: [ new HtmlWebpackPlugin({ template: './src/react/index.html' }) ],
+	devtool: 'inline-source-map',
+	plugins: [
+		new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin({ template: './src/react/index.html' })
+	],
 	node: {
 		fs: 'empty'
 	},
