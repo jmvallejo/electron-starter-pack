@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --env.mode=production --config config/webpack.config.js",
     "electron:server": "webpack-dev-server --env.mode=development --config config/webpack.config.react.js",
-    "electron:client": "webpack --env.mode=development --config config/webpack.config.electron.js && electron dist/electron/electronApp.js"
+    "electron:client": "webpack --env.mode=development --config config/webpack.config.electron.js && electron dist/electron/electronApp.js",
+    "web:server": "webpack-dev-server --env.mode=development --config config/webpack.config.react.js --open"
   },
   "devDependencies": {
     "@types/react": "^16.9.46",
