@@ -2,13 +2,14 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const config = {
+const config = (env, argv) => ({
 	target: 'web',
 	name: 'react',
 	entry: {
 		reactApp: './src/react/index.tsx'
 	},
 	devServer: {
+		port: 3000,
 		hot: true
 	},
 	output: {
@@ -34,7 +35,7 @@ const config = {
 	node: {
 		fs: 'empty'
 	},
-	mode: process.env.NODE_ENV || 'development'
-}
+	mode: env.mode || 'development'
+})
 
 module.exports = config

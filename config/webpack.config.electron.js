@@ -1,7 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const config = {
+const config = (env, argv) => ({
   target: 'electron-main',
   name: 'electron',
 	entry: {
@@ -21,7 +21,7 @@ const config = {
 	plugins: [
 		new CleanWebpackPlugin()
 	],
-  mode: process.env.NODE_ENV || 'development'
-}
+  mode: env.mode || 'development'
+})
 
 module.exports = config
