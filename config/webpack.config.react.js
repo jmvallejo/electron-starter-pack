@@ -35,6 +35,11 @@ const config = (env, argv) => ({
 	node: {
 		fs: 'empty'
 	},
+	optimization: {
+		splitChunks: {
+			chunks: 'all'
+		}
+	},
 	mode: env.mode || 'development'
 })
 
