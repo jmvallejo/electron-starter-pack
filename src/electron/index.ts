@@ -6,7 +6,6 @@ const ENTRY_POINT = IS_PRODUCTION ? path.join('dist', 'react', 'index.html') : '
 
 app.once('ready', () => {
   const mainWindow = new BrowserWindow()
-  mainWindow.webContents.openDevTools()
   if (IS_PRODUCTION) {
     mainWindow.loadFile(ENTRY_POINT)
       .catch(console.error)
