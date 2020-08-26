@@ -2,6 +2,7 @@ appId: com.mycompany.myapp
 productName: MyApp
 files:
   - dist/**/*
+  - "!dist/bin"
 directories:
   output: dist/bin
 win:
