@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { EnvironmentPlugin } = require('webpack')
+const Dotenv = require('dotenv-webpack')
 
 const config = (env, argv) => ({
 	target: 'web',
@@ -40,6 +42,12 @@ const config = (env, argv) => ({
 	devtool: 'inline-source-map',
 	plugins: [
 		new CleanWebpackPlugin(),
+		new EnvironmentPlugin({
+			NODE_ENV: env.NODE_ENV || 'development'
+		}),
+		new Dotenv({
+			defaults: true
+		}),
 		new HtmlWebpackPlugin({ template: './src/react/index.html' })
 	],
 	node: {

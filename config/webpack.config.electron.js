@@ -1,6 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { EnvironmentPlugin } = require('webpack')
+const Dotenv = require('dotenv-webpack')
 
 const config = (env, argv) => ({
   target: 'electron-main',
@@ -23,6 +24,9 @@ const config = (env, argv) => ({
 		new CleanWebpackPlugin(),
 		new EnvironmentPlugin({
 			NODE_ENV: env.NODE_ENV || 'development'
+		}),
+		new Dotenv({
+			defaults: true
 		})
 	],
   mode: env.NODE_ENV || 'development'
