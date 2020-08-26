@@ -15,7 +15,7 @@ const config = (env, argv) => ({
 	output: {
 		filename: '[name].js',
 		path: path.resolve(__dirname, '..', 'dist', 'react'),
-		publicPath: env.NODE_ENV === 'production' ? './' : '/'
+		publicPath: env.NODE_ENV === 'production' ? process.env.PUBLIC_PATH || './' : '/'
 	},
 	module: {
 		rules: [
