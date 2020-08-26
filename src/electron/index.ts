@@ -13,4 +13,6 @@ app.once('ready', () => {
     mainWindow.loadURL(ENTRY_POINT)
       .catch(console.error)
   }
+
+  console.log('APP VERSION', process.env.APP_VERSION)
 })

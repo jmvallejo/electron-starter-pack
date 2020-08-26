@@ -4,8 +4,9 @@
   "main": "dist/electron/electronApp.js",
   "license": "MIT",
   "scripts": {
-    "build:web": "webpack --env.NODE_ENV=production --env.WEB --config config/webpack.config.js",
-    "build:electron": "webpack --env.NODE_ENV=production --env.ELECTRON --config config/webpack.config.js",
+    "prebuild": "node scripts/generateEnv.js",
+    "build:web": "yarn prebuild && webpack --env.NODE_ENV=production --env.WEB --config config/webpack.config.js",
+    "build:electron": "yarn prebuild && webpack --env.NODE_ENV=production --env.ELECTRON --config config/webpack.config.js",
     "dist": "electron-builder --config config/electron-builder.yml",
     "electron:server": "webpack-dev-server --env.NODE_ENV=development --env.ELECTRON --config config/webpack.config.react.js",
     "electron:client": "webpack --env.NODE_ENV=development --config config/webpack.config.electron.js && electron .",

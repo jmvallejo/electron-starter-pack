@@ -60,3 +60,13 @@ After building for Electron:
 yarn dist
 ```
 Assets should be generated under `dist/bin` if everything goes well.
+
+## Env Variables
+
+List of predefined variables inside webpack builds:
+
+- `NODE_ENV: 'development' | 'production'`
+
+Dotenv is also available and can be generated from `scripts/generateEnv.js` (invoked before building), which by default will contain:
+
+- `APP_VERSION: <version from package.json>`
