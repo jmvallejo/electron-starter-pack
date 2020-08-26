@@ -25,7 +25,9 @@ const config = (env, argv) => ({
 		]
 	},
 	resolve: {
-		extensions: [ '.ts', '.tsx', '.js' ]
+		extensions: env.ELECTRON
+			? [ '.electron.ts', '.ts', '.electron.tsx', '.tsx', '.electron.js', '.js' ]
+			: [ '.ts', '.tsx', '.js' ]
 	},
 	devtool: 'inline-source-map',
 	plugins: [
