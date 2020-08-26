@@ -9,7 +9,7 @@ const config = (env, argv) => ({
 		reactApp: './src/react/index.tsx'
 	},
 	devServer: {
-		port: 3000,
+		port: env.ELECTRON ? 3000 : 3001,
 		hot: true
 	},
 	output: {
